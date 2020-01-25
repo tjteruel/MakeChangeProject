@@ -2,28 +2,24 @@ package com.skilldistillery.homework;
 
 import java.util.Scanner;
 
-public class MakeChange {
+public class mkchngTEST {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.print("Enter Price: ");
-		double itemPrice = kb.nextDouble();
-
-		System.out.print("Enter Payment: ");
-		double customerPayment = kb.nextDouble();
-
-		double totalChange = customerPayment - itemPrice;
+		//TEST: input change amount
+		System.out.print("Input change Price: ");
 		
-		if (totalChange > 0) {
-			System.out.println("Total Change: " + totalChange);
-			if (totalChange % 20 !=0); //twenty
-			double billsTwenty = totalChange / 20; 
+		double cp = kb.nextDouble();
+		
+		if (cp > 0) {
+			if (cp % 20 !=0);
+			double billsTwenty = cp / 20; //twenty
 			int displayTwenty = (int)billsTwenty;
 			if (displayTwenty != 0) {
 			System.out.println("$20 bills: " + displayTwenty);
 			}
 			
-			double remainderTwenty = (double)(totalChange - (displayTwenty * 20));
+			double remainderTwenty = (double)(cp - (displayTwenty * 20));
 			//System.out.println("remainderTwenty: " + remainderTwenty);
 			
 			if (remainderTwenty % 10 !=0); //tens
@@ -93,26 +89,9 @@ public class MakeChange {
 			System.out.println("Pennys: " + displayPenny);
 			}
 		}
-
-		if (totalChange < 0) {
-			System.out.println("Insufficient payment");
-
-		}
-
-		if (totalChange == 0) {
-			System.out.println("Exact change.");
-		}
-
-		kb.close();
-
+		
 	}
 
 }
-// git add . 
-// git commit -m " note updates"
-// git push
 
-// vi
-// i - insert
-// -end insert
-// :wq - write/quit
+
