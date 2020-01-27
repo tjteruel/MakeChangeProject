@@ -13,7 +13,7 @@ public class MakeChange {
 		double customerPayment = kb.nextDouble();
 
 		double totalChange = customerPayment - itemPrice;
-		
+
 		if (totalChange < 0) {
 			System.out.println("Insufficient payment");
 
@@ -94,41 +94,31 @@ public class MakeChange {
 			if (remainderDime % 0.05 != 0)
 				; // nickels
 			double centsNickel = remainderDime / 0.05;
-			int displayNickel = (int) centsNickel;
+			int displayNickel = (int) (centsNickel + 0.005);
 			if (displayNickel != 0) {
 				System.out.println("Nickels: " + displayNickel);
 			}
 
 			double remainderNickel = (double) (remainderDime - (displayNickel * 0.05));
-			// System.out.println("remainderNickel: " + remainderNickel);
+			//System.out.println("remainderNickel: " + remainderNickel);
 
-			if (remainderNickel % 0.01 == 0) { 
+			if (remainderNickel % 0.01 == 0) {
 				System.out.println("");
 			}
-			
+
 			if (remainderNickel % 0.01 != 0)
 				; // pennies
 			double centsPenny = remainderNickel / 0.01;
-			int displayPenny = (int)(centsPenny + 0.005);
-	//		System.out.println("centsPenny: " + centsPenny);
-	//		System.out.println("displayPenny: " + displayPenny);
-			
+			int displayPenny = (int) (centsPenny + 0.005);
+			// System.out.println("centsPenny: " + centsPenny);
+			// System.out.println("displayPenny: " + displayPenny);
+
 			if (displayPenny > 0) {
-				System.out.println("Pennys1: " + displayPenny);
+				System.out.println("Pennys: " + displayPenny);
 			}
 
-			
 			kb.close();
 
 		}
-		}
 	}
-
-// git add . 
-// git commit -m " note updates"
-// git push
-
-// vi
-// i - insert
-// -end insert
-// :wq - write/quit
+}
